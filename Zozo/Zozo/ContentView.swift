@@ -9,7 +9,10 @@ struct ContentView: View {
         "Je t'aime!",
         "Tu es magnifique!",
         "Bisous!",
-        "Mon coeur!"
+        "Mon coeur!",
+        "Ma petite Louloute",
+        "Choupiflette <3",
+        "Papa <3 Zoé"
     ]
 
     var body: some View {
