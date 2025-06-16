@@ -11,8 +11,8 @@ struct ContentView: View {
         "Bisous!",
         "Mon coeur!",
         "Ma petite Louloute",
-        "Choupiflette <3",
-        "Papa <3 Zoé"
+        "Choupinette",
+        "Papa ❤️ Zoé"
     ]
 
     var body: some View {
