@@ -30,8 +30,10 @@ struct ContentView: View {
             if let loveMessage = loveMessage {
                 Text(loveMessage)
                     .padding(12)
-                    .background(Color.white.opacity(0.9))
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .background(
+                        MessageBubbleShape()
+                            .fill(Color.white.opacity(0.9))
+                    )
                     .offset(y: -150)
                     .transition(.opacity)
             }
