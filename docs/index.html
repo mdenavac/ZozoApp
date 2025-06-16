@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZozoApp Web</title>
+  <style>
+    body { display:flex; justify-content:center; align-items:center; height:100vh; margin:0; background:#f5f5f5; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    #emoji { font-size:120px; cursor:pointer; -webkit-user-select:none; user-select:none; }
+    #bubble { position:absolute; top:40%; padding:12px 16px; background:rgba(255,255,255,0.9); border-radius:16px; display:none; }
+    #bubble:after { content:''; position:absolute; left:50%; transform:translateX(-50%); bottom:-12px; border-width:12px 12px 0 12px; border-style:solid; border-color:rgba(255,255,255,0.9) transparent transparent transparent; }
+  </style>
+</head>
+<body>
+  <div id="emoji">🙂</div>
+  <div id="bubble"></div>
+<script>
+const niceEmojis = ["😊","😄","😍","🥰","😘","😎","😁"];
+const loveMessages = [
+  "Je t'adore!",
+  "Je t'aime!",
+  "Tu es magnifique!",
+  "Bisous!",
+  "Mon coeur!",
+  "Ma petite Louloute",
+  "Choupinette",
+  "Papa ❤️ Zoé"
+];
+function randomEmoji(){
+  return Math.random() < 0.1 ? "💩" : niceEmojis[Math.floor(Math.random()*niceEmojis.length)];
+}
+const emojiEl=document.getElementById('emoji');
+const bubble=document.getElementById('bubble');
+function showEmoji(){ emojiEl.textContent=randomEmoji(); }
+function showMessage(){
+  bubble.textContent=loveMessages[Math.floor(Math.random()*loveMessages.length)];
+  bubble.style.display='block';
+  setTimeout(()=>bubble.style.display='none',2000);
+}
+emojiEl.addEventListener('click',showMessage);
+window.addEventListener('load',showEmoji);
+</script>
+</body>
+</html>
